@@ -14,11 +14,20 @@ export default {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
+        border: "hsl(var(--card-border))",
         input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
+        ring: "hsl(var(--primary))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        surface: "hsl(var(--surface))",
+        
+        // Neon colors
+        "neon-cyan": "hsl(var(--neon-cyan))",
+        "neon-blue": "hsl(var(--neon-blue))",
+        "neon-purple": "hsl(var(--neon-purple))",
+        "neon-pink": "hsl(var(--neon-pink))",
+        "neon-green": "hsl(var(--neon-green))",
+        
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -46,16 +55,11 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+          border: "hsl(var(--card-border))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        glass: {
+          bg: "hsl(var(--glass-bg))",
+          border: "hsl(var(--glass-border))",
         },
       },
       borderRadius: {
