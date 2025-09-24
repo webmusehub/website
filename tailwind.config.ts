@@ -19,21 +19,41 @@ export default {
         ring: "hsl(var(--primary))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        surface: "hsl(var(--surface))",
+        surface: {
+          DEFAULT: "hsl(var(--surface))",
+          elevated: "hsl(var(--surface-elevated))",
+        },
         
-        // Neon colors
-        "neon-cyan": "hsl(var(--neon-cyan))",
-        "neon-blue": "hsl(var(--neon-blue))",
-        "neon-purple": "hsl(var(--neon-purple))",
-        "neon-pink": "hsl(var(--neon-pink))",
+        // Enhanced Neon colors
+        "neon-cyan": {
+          DEFAULT: "hsl(var(--neon-cyan))",
+          bright: "hsl(var(--neon-cyan-bright))",
+          dim: "hsl(var(--neon-cyan-dim))",
+        },
+        "neon-blue": {
+          DEFAULT: "hsl(var(--neon-blue))",
+          bright: "hsl(var(--neon-blue-bright))",
+        },
+        "neon-purple": {
+          DEFAULT: "hsl(var(--neon-purple))",
+          bright: "hsl(var(--neon-purple-bright))",
+        },
+        "neon-pink": {
+          DEFAULT: "hsl(var(--neon-pink))",
+          bright: "hsl(var(--neon-pink-bright))",
+        },
         "neon-green": "hsl(var(--neon-green))",
+        "neon-orange": "hsl(var(--neon-orange))",
         
         primary: {
           DEFAULT: "hsl(var(--primary))",
+          bright: "hsl(var(--primary-bright))",
+          dim: "hsl(var(--primary-dim))",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
+          bright: "hsl(var(--secondary-bright))",
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
@@ -54,18 +74,63 @@ export default {
         },
         card: {
           DEFAULT: "hsl(var(--card))",
+          elevated: "hsl(var(--card-elevated))",
           foreground: "hsl(var(--card-foreground))",
-          border: "hsl(var(--card-border))",
+          border: {
+            DEFAULT: "hsl(var(--card-border))",
+            bright: "hsl(var(--card-border-bright))",
+          },
         },
         glass: {
-          bg: "hsl(var(--glass-bg))",
-          border: "hsl(var(--glass-border))",
+          bg: {
+            DEFAULT: "hsl(var(--glass-bg))",
+            strong: "hsl(var(--glass-bg-strong))",
+          },
+          border: {
+            DEFAULT: "hsl(var(--glass-border))",
+            bright: "hsl(var(--glass-border-bright))",
+          },
         },
+        hover: {
+          DEFAULT: "hsl(var(--hover))",
+          bright: "hsl(var(--hover-bright))",
+        },
+        active: "hsl(var(--active))",
+        focus: "hsl(var(--focus))",
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        DEFAULT: "var(--radius)",
+        sm: "var(--radius-sm)",
+        lg: "var(--radius-lg)",
+        xl: "var(--radius-xl)",
+        md: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-secondary': 'var(--gradient-secondary)',
+        'gradient-tertiary': 'var(--gradient-tertiary)',
+        'gradient-hero': 'var(--gradient-hero)',
+        'gradient-card': 'var(--gradient-card)',
+        'gradient-glass': 'var(--gradient-glass)',
+      },
+      boxShadow: {
+        'glow-cyan': 'var(--glow-cyan)',
+        'glow-cyan-strong': 'var(--glow-cyan-strong)',
+        'glow-blue': 'var(--glow-blue)',
+        'glow-purple': 'var(--glow-purple)',
+        'glow-pink': 'var(--glow-pink)',
+        'glass': 'var(--shadow-glass)',
+        'glass-strong': 'var(--shadow-glass-strong)',
+        'elevated': 'var(--shadow-elevated)',
+        'floating': 'var(--shadow-floating)',
+      },
+      transitionDuration: {
+        'fast': 'var(--transition-fast)',
+        'normal': 'var(--transition-normal)',
+        'slow': 'var(--transition-slow)',
+      },
+      transitionTimingFunction: {
+        'bounce': 'var(--transition-bounce)',
       },
       keyframes: {
         "accordion-down": {

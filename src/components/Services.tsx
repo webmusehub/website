@@ -35,11 +35,11 @@ const Services = () => {
   return (
     <section id="services" className="py-20">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="text-center mb-20 animate-slide-up">
+          <h2 className="text-5xl md:text-6xl font-black mb-8">
             <span className="hero-text">Our Services</span>
           </h2>
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/85 max-w-3xl mx-auto leading-relaxed">
             Comprehensive digital solutions powered by cutting-edge technology and creative innovation
           </p>
         </div>
@@ -48,33 +48,38 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="glass rounded-2xl p-6 hover-glow transition-all duration-500 hover:scale-105 group"
+              className="glass-strong rounded-2xl p-8 card-hover group relative overflow-hidden animate-scale-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
               data-cursor-hover
             >
-              <div className={`w-12 h-12 rounded-lg bg-${service.color}/10 flex items-center justify-center mb-6 glow-${service.color.split('-')[1]} group-hover:scale-110 transition-transform duration-300`}>
-                <service.icon className={`w-6 h-6 text-${service.color}`} />
+              {/* Background gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl" />
+              
+              <div className={`w-16 h-16 rounded-xl bg-gradient-primary flex items-center justify-center mb-8 glow-${service.color.split('-')[1]} group-hover:scale-110 transition-transform duration-300 shadow-floating`}>
+                <service.icon className={`w-8 h-8 text-primary-foreground`} />
               </div>
 
-              <h3 className="text-xl font-bold mb-4 text-foreground">
+              <h3 className="text-2xl font-bold mb-6 text-foreground group-hover:text-neon-cyan transition-colors duration-300">
                 {service.title}
               </h3>
 
-              <p className="text-foreground/70 mb-6 leading-relaxed">
+              <p className="text-foreground/75 mb-8 leading-relaxed">
                 {service.description}
               </p>
 
-              <ul className="space-y-2">
+              <ul className="space-y-3 mb-8">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-sm text-foreground/60">
-                    <div className={`w-1.5 h-1.5 rounded-full bg-${service.color} mr-3 glow-${service.color.split('-')[1]}`} />
+                  <li key={feature} className="flex items-center text-sm text-foreground/70">
+                    <div className={`w-2 h-2 rounded-full bg-${service.color} mr-4 glow-${service.color.split('-')[1]} animate-pulse-glow`} />
                     {feature}
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-6 pt-4 border-t border-card-border">
-                <button className={`text-${service.color} font-semibold hover:underline transition-colors`}>
-                  Learn More →
+              <div className="pt-6 border-t border-glass-border-bright">
+                <button className={`text-${service.color} font-bold hover:text-${service.color}-bright transition-all duration-300 hover:translate-x-2 flex items-center gap-2`}>
+                  Learn More
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </button>
               </div>
             </div>
