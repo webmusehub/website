@@ -32,14 +32,14 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+1 (555) 123-4567',
-      color: 'neon-blue',
+      details: '+91 7892489273',
+      color: 'neon-cyan',
     },
     {
       icon: MapPin,
       title: 'Visit Us',
       details: 'San Francisco, CA',
-      color: 'neon-purple',
+      color: 'neon-cyan',
     },
   ];
 

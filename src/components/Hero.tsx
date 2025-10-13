@@ -45,9 +45,9 @@ const Hero = () => {
           {/* Enhanced Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24">
             {[
-              { number: '200+', label: 'Projects Completed', icon: '🚀' },
-              { number: '150+', label: 'Happy Clients', icon: '💫' },
-              { number: '5+', label: 'Years Experience', icon: '⚡' },
+              { number: '2+', label: 'Projects Completed', icon: '🚀' },
+              { number: '3+', label: 'Happy Clients', icon: '💫' },
+              { number: '2+', label: 'Years Experience', icon: '⚡' },
               { number: '24/7', label: 'Support Available', icon: '🛡️' },
             ].map((stat, index) => (
               <div 

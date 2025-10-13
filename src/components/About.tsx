@@ -29,9 +29,9 @@ const About = () => {
   ];
 
   const stats = [
-    { number: '200+', label: 'Projects Delivered', suffix: '' },
-    { number: '150+', label: 'Happy Clients', suffix: '' },
-    { number: '99', label: 'Success Rate', suffix: '%' },
+    { number: '2+', label: 'Projects Delivered', suffix: '' },
+    { number: '3+', label: 'Happy Clients', suffix: '' },
+    { number: '100', label: 'Success Rate', suffix: '%' },
     { number: '24/7', label: 'Support Available', suffix: '' },
   ];
 
