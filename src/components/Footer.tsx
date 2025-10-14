@@ -74,7 +74,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-card-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-foreground/60 text-sm">
-            © 2024 WebMuseHub. All rights reserved.
+            © 2025 WebMuseHub. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-foreground/60 hover:text-primary transition-colors" data-cursor-hover>

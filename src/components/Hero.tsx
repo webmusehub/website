@@ -34,12 +34,14 @@ const Hero = () => {
               <ArrowRight className="w-6 h-6 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-110" />
             </button>
             
+            <a href="#portfolio"> 
             <button 
               className="glass-strong px-10 py-5 rounded-xl font-bold border border-glass-border-bright hover-tilt transition-all duration-300 text-lg shadow-elevated hover:shadow-floating"
               data-cursor-hover
             >
               View Our Work
             </button>
+            </a>
           </div>
 
           {/* Enhanced Stats */}
