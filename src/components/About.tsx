@@ -1,4 +1,5 @@
 import { Users, Target, Lightbulb, Award } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const values = [
@@ -59,9 +60,11 @@ const About = () => {
               <button className="bg-primary text-primary-foreground px-8 py-3 rounded-lg hover-glow transition-all duration-300 hover:scale-105">
                 Our Story
               </button>
-              <button className="glass px-8 py-3 rounded-lg border border-card-border hover-glow transition-all duration-300 hover:scale-105">
-                Meet the Team
-              </button>
+              <Link to="/team">
+                <button className="glass px-8 py-3 rounded-lg border border-card-border hover-glow transition-all duration-300 hover:scale-105">
+                  Meet the Team
+                </button>
+              </Link>
             </div>
           </div>
 

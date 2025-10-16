@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,6 +20,7 @@ const Navigation = () => {
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Team', href: '/team' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -37,17 +39,36 @@ const Navigation = () => {
 
           {/* Enhanced Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-10">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-foreground hover:text-neon-cyan transition-all duration-300 relative group font-medium text-lg"
-                data-cursor-hover
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full glow-cyan shadow-glow-cyan" />
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isRoute = item.href.startsWith('/');
+              const linkClass = "text-foreground hover:text-neon-cyan transition-all duration-300 relative group font-medium text-lg";
+              const content = (
+                <>
+                  {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full glow-cyan shadow-glow-cyan" />
+                </>
+              );
+              
+              return isRoute ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={linkClass}
+                  data-cursor-hover
+                >
+                  {content}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={linkClass}
+                  data-cursor-hover
+                >
+                  {content}
+                </a>
+              );
+            })}
             <button className="btn-primary text-primary-foreground px-8 py-3 rounded-xl hover-glow-strong font-bold text-lg shadow-floating">
               Get Started
             </button>
@@ -66,17 +87,32 @@ const Navigation = () => {
         {/* Enhanced Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-6 glass-strong rounded-xl p-6 shadow-floating animate-slide-up">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block py-3 text-foreground hover:text-neon-cyan transition-all duration-300 font-medium text-lg border-b border-glass-border last:border-b-0"
-                onClick={() => setIsMobileMenuOpen(false)}
-                data-cursor-hover
-              >
-                {item.name}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isRoute = item.href.startsWith('/');
+              const linkClass = "block py-3 text-foreground hover:text-neon-cyan transition-all duration-300 font-medium text-lg border-b border-glass-border last:border-b-0";
+              
+              return isRoute ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={linkClass}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  data-cursor-hover
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={linkClass}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  data-cursor-hover
+                >
+                  {item.name}
+                </a>
+              );
+            })}
             <button className="w-full mt-6 btn-primary text-primary-foreground py-4 rounded-xl hover-glow-strong font-bold text-lg shadow-floating">
               Get Started
             </button>
