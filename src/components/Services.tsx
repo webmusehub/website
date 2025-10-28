@@ -77,10 +77,7 @@ const Services = () => {
               </ul>
 
               <div className="pt-6 border-t border-glass-border-bright">
-                <button className={`text-${service.color} font-bold hover:text-${service.color}-bright transition-all duration-300 hover:translate-x-2 flex items-center gap-2`}>
-                  Learn More
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                </button>
+                
               </div>
             </div>
           ))}
