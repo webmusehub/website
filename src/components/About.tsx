@@ -97,14 +97,29 @@ const About = () => {
           {values.map((value) => (
             <div
               key={value.title}
-              className={`text-center glass-bright rounded-2xl p-6 border border-${value.color}/20 hover:border-${value.color}/40 transition-all duration-500 hover:scale-105 group shadow-lg hover:shadow-xl shadow-${value.color}/5 hover:shadow-${value.color}/10`}
+              className="text-center glass rounded-2xl p-6 hover-glow-strong transition-all duration-500 hover:scale-105 group"
               data-cursor-hover
             >
-              <div className={`w-16 h-16 mx-auto rounded-2xl bg-${value.color}/10 flex items-center justify-center mb-6 group-hover:bg-${value.color}/20 border border-${value.color}/20 group-hover:border-${value.color}/40 transition-all duration-300 group-hover:scale-110 glow-${value.color.split('-')[1]}`}>
-                <value.icon className={`w-8 h-8 text-${value.color} group-hover:text-${value.color} transition-all duration-300`} />
+              <div className={`w-16 h-16 mx-auto rounded-2xl glass-bright flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 ${
+                value.color === 'neon-cyan' ? 'glow-cyan hover:glow-cyan' :
+                value.color === 'neon-blue' ? 'glow-blue hover:glow-blue' :
+                value.color === 'neon-purple' ? 'glow-purple hover:glow-purple' :
+                'glow-pink hover:glow-pink'
+              }`}>
+                <value.icon className={`w-8 h-8 transition-all duration-300 ${
+                  value.color === 'neon-cyan' ? 'text-neon-cyan' :
+                  value.color === 'neon-blue' ? 'text-neon-blue' :
+                  value.color === 'neon-purple' ? 'text-neon-purple' :
+                  'text-neon-pink'
+                }`} />
               </div>
               
-              <h4 className={`text-xl font-bold mb-4 text-${value.color} opacity-90 group-hover:opacity-100 transition-all duration-300`}>
+              <h4 className={`text-xl font-bold mb-4 transition-all duration-300 ${
+                value.color === 'neon-cyan' ? 'text-neon-cyan' :
+                value.color === 'neon-blue' ? 'text-neon-blue' :
+                value.color === 'neon-purple' ? 'text-neon-purple' :
+                'text-neon-pink'
+              }`}>
                 {value.title}
               </h4>
               
