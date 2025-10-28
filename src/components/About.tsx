@@ -97,18 +97,18 @@ const About = () => {
           {values.map((value) => (
             <div
               key={value.title}
-              className="text-center glass rounded-2xl p-6 hover-glow transition-all duration-500 hover:scale-105 group"
+              className={`text-center glass-bright rounded-2xl p-6 border border-${value.color}/20 hover:border-${value.color}/40 transition-all duration-500 hover:scale-105 group shadow-lg hover:shadow-xl shadow-${value.color}/5 hover:shadow-${value.color}/10`}
               data-cursor-hover
             >
-              <div className={`w-16 h-16 mx-auto rounded-2xl bg-${value.color}/10 flex items-center justify-center mb-6 glow-${value.color.split('-')[1]} group-hover:scale-110 transition-transform duration-300`}>
-                <value.icon className={`w-8 h-8 text-${value.color}`} />
+              <div className={`w-16 h-16 mx-auto rounded-2xl bg-${value.color}/10 flex items-center justify-center mb-6 group-hover:bg-${value.color}/20 border border-${value.color}/20 group-hover:border-${value.color}/40 transition-all duration-300 group-hover:scale-110 glow-${value.color.split('-')[1]}`}>
+                <value.icon className={`w-8 h-8 text-${value.color} group-hover:text-${value.color} transition-all duration-300`} />
               </div>
               
-              <h4 className="text-xl font-bold mb-4 text-foreground">
+              <h4 className={`text-xl font-bold mb-4 text-${value.color} opacity-90 group-hover:opacity-100 transition-all duration-300`}>
                 {value.title}
               </h4>
               
-              <p className="text-foreground/70 leading-relaxed">
+              <p className="text-foreground/70 group-hover:text-foreground/90 transition-all duration-300">
                 {value.description}
               </p>
             </div>
