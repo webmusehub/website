@@ -172,11 +172,11 @@ const Portfolio = () => {
         </div>
 
         {/* View More Button */}
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <button className="glass px-8 py-4 rounded-lg font-semibold border border-card-border hover-glow transition-all duration-300 hover:scale-105">
             View All Projects
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
