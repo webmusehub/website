@@ -26,7 +26,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'hello@webmusehub.com',
+      details: 'webmusehub@gmail.com',
       color: 'neon-cyan',
     },
     {
@@ -38,7 +38,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: 'San Francisco, CA',
+      details: 'Vidyanagar, Hubli',
       color: 'neon-cyan',
     },
   ];
