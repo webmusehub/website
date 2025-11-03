@@ -9,12 +9,26 @@ const Contact = () => {
     message: '',
   });
 
+  // 👉 When form submitted
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+
+    const { name, email, subject, message } = formData;
+
+    // WhatsApp formatted text message
+    const text = `New Contact Form Submission:%0A%0A👤 Name: ${name}%0A📧 Email: ${email}%0A📌 Subject: ${subject}%0A💬 Message: ${message}`;
+
+    // WhatsApp URL (change number if needed)
+    const whatsappURL = `https://wa.me/917892489273?text=${text}`;
+
+    // Open WhatsApp in new tab
+    window.open(whatsappURL, '_blank');
+
+    // Optional: Reset the form after sending
+    setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
+  // Handle input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
