@@ -1,21 +1,76 @@
+import { useEffect, useRef } from 'react';
 import { ArrowRight, Phone } from 'lucide-react';
 
+declare global {
+  interface Window {
+    VANTA: any;
+    THREE: any;
+  }
+}
+
+function loadScript(src: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector(`script[src="${src}"]`)) { resolve(); return; }
+    const s = document.createElement('script');
+    s.src = src;
+    s.onload = () => resolve();
+    s.onerror = reject;
+    document.head.appendChild(s);
+  });
+}
+
 export default function Hero() {
+  const globeRef = useRef<HTMLDivElement>(null);
+  const vantaRef = useRef<any>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function initVanta() {
+      await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js');
+      await loadScript('https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js');
+      if (cancelled || !globeRef.current) return;
+      vantaRef.current = window.VANTA.GLOBE({
+        el: globeRef.current,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200,
+        minWidth: 200,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x2D6BE4,
+        color2: 0x93c5fd,
+        backgroundColor: 0xF5F3EE,
+        size: 1.5,
+      });
+    }
+
+    initVanta();
+    return () => {
+      cancelled = true;
+      if (vantaRef.current) { vantaRef.current.destroy(); vantaRef.current = null; }
+    };
+  }, []);
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-24 pb-16 px-5 md:px-12 overflow-hidden bg-dark">
       {/* Background radial glow */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_60%_at_60%_40%,rgba(26,86,219,0.12)_0%,transparent_60%),radial-gradient(ellipse_50%_50%_at_10%_80%,rgba(245,158,11,0.05)_0%,transparent_50%)]" />
-      
+
       {/* Geometric Grid Overlay */}
       <div className="absolute inset-0 z-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
+
+      {/* Vanta Globe — full hero background */}
+      <div
+        ref={globeRef}
+        className="hidden lg:block absolute inset-0 z-0"
+        style={{ width: '100%', height: '100%' }}
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Side: Brand Value Prop */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-brand/10 border border-brand/35 text-brand-light text-xs font-black tracking-widest uppercase mb-6 animate-pulse">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand" />
-            🇮🇳 Hubballi, Karnataka · Pan-India
-          </div>
 
           <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase text-slate-800 leading-[0.82] mb-6">
             Grow your<br />business with<br />
@@ -63,8 +118,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-
-
       </div>
     </section>
   );
