@@ -134,44 +134,49 @@ export const processSteps: ProcessStep[] = [
 
 export const portfolioItems: PortfolioItem[] = [
   {
-    id: 'clothing-brand',
-    title: 'Clothing Brand — Online Store',
-    description: 'Full Shopify store with product catalogue, payment integration, and Meta Ads campaign for a fashion D2C brand.',
-    category: 'E-commerce',
-    metric: '340% increase in online sales in 60 days',
-    emoji: '🛍️'
+    id: 'religious-services',
+    title: 'Narayana Bali & Tripindi Shraddha Website',
+    description: 'Modern spiritual services platform with online booking, ritual information, inquiry management, and mobile-first design for devotees across India.',
+    category: 'Religious Services',
+    metric: 'Online Booking & Enquiry Management System',
+    emoji: '🕉️',
+    url: 'http://narayanabalitripindi.com/'
   },
   {
-    id: 'real-estate',
-    title: 'Real Estate — Lead Gen Website',
-    description: 'High-converting property listing website with CRM integration and Google Ads campaign for a Hubballi real estate firm.',
-    category: 'Web Development',
-    metric: '120+ qualified leads in the first month',
-    emoji: '🏠'
+    id: 'agritech',
+    title: 'Kisan Serve – Farmer Assistance Platform',
+    description: 'AI-powered agriculture platform featuring crop disease detection, government scheme guidance, market insights, and equipment rental services.',
+    category: 'Agritech',
+    metric: 'AI-Driven Farmer Support Platform',
+    emoji: '🌾',
+    url: 'https://kisan-serve.vercel.app/'
   },
   {
-    id: 'skincare',
-    title: 'Skincare Brand — Shopify + Ads',
-    description: 'Branded Shopify storefront with influencer-ready design, email automation, and Instagram ad campaigns.',
-    category: 'Performance Marketing',
-    metric: '5.2x ROAS on Meta Ads in 45 days',
-    emoji: '✨'
+    id: 'education',
+    title: 'Holy Cross Digital Campus',
+    description: 'Comprehensive school management system with student portals, attendance tracking, academic records, fee management, and parent communication tools.',
+    category: 'Education',
+    metric: 'Complete School Management Ecosystem',
+    emoji: '🎓',
+    url: 'https://holy-cross-digital-campus.vercel.app/'
   },
   {
-    id: 'b2b-logistics',
-    title: 'B2B Logistics — SEO Initiative',
-    description: 'Full search optimization campaign targeting long-tail commercial keywords to capture Indian trade logistics traffic.',
-    category: 'SEO',
-    metric: '#1 ranking for 18 primary keywords',
-    emoji: '🚚'
-  },
-  {
-    id: 'clinic-whatsapp',
-    title: 'Healthcare Clinic — WhatsApp Automation',
-    description: 'Automated booking assistant integration with immediate appointment scheduling, reducing staff handling time.',
+    id: 'automation',
+    title: 'AutoCertify – Certificate Automation Tool',
+    description: 'Automated certificate generation and distribution platform that creates, verifies, and delivers certificates instantly with minimal manual effort.',
     category: 'Automation',
-    metric: '75% reduction in booking friction',
-    emoji: '🏥'
+    metric: 'Instant Certificate Generation & Verification',
+    emoji: '🤖',
+    url: 'https://autocertify-seven.vercel.app/'
+  },
+  {
+    id: 'productivity-saas',
+    title: 'Habify – Habit & Goal Tracker',
+    description: 'AI-powered productivity platform helping users build habits, manage goals, track progress, and maintain daily accountability through smart insights.',
+    category: 'Productivity SaaS',
+    metric: 'Smart Habit Tracking & Goal Management',
+    emoji: '🚀',
+    url: 'https://habify-chi.vercel.app/'
   }
 ];
 

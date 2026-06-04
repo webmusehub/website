@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Clock, Contact, ChevronRight, CheckCircle, Trash2, Sliders, ExternalLink, Sparkles } from 'lucide-react';
+import { Calendar, Clock, Contact, ChevronRight, CheckCircle, Sliders, ExternalLink, Sparkles } from 'lucide-react';
 import { Booking } from '../types';
 import { services, timeSlots } from '../data/websiteData';
 
@@ -104,18 +104,25 @@ export default function FinalCTA() {
     setBookings(updatedBookings);
     localStorage.setItem('webmusehub_bookings', JSON.stringify(updatedBookings));
 
+    // Send booking details to WhatsApp
+    const msg = encodeURIComponent(
+      `🔔 *New Strategy Session Booking*\n\n` +
+      `👤 *Name:* ${name}\n` +
+      `📞 *Phone:* ${phone}\n` +
+      `📧 *Email:* ${email}\n` +
+      `🌐 *Website:* ${website || 'Not provided'}\n` +
+      `🛠️ *Service:* ${service}\n` +
+      `📅 *Date:* ${matchedDateLabel}\n` +
+      `⏰ *Time:* ${selectedSlot} (IST)`
+    );
+    window.open(`https://wa.me/917892489273?text=${msg}`, '_blank');
+
     // Reset Form
     setErrorMessage('');
     setStep(3);
   };
 
-  const handleDeleteBooking = (id: string) => {
-    const filtered = bookings.filter((b) => b.id !== id);
-    setBookings(filtered);
-    localStorage.setItem('webmusehub_bookings', JSON.stringify(filtered));
-  };
-
-  const resetFlow = () => {
+const resetFlow = () => {
     setName('');
     setEmail('');
     setPhone('');
@@ -132,7 +139,7 @@ export default function FinalCTA() {
 
       <div className="relative z-10 max-w-5xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-brand/10 border border-brand/35 text-brand-light text-xs font-black uppercase tracking-widest mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-brand/10 border border-brand/35 text-brand text-xs font-black uppercase tracking-widest mb-4">
             <Sparkles size={11} className="animate-spin duration-3000" />
             Book Free Audit
           </div>
@@ -385,33 +392,7 @@ export default function FinalCTA() {
               </div>
             </div>
 
-            <div className="bg-dark/60 border border-slate-200 rounded-none p-6">
-              <h4 className="font-display font-black text-xs text-slate-800 uppercase tracking-wider mb-4 flex items-center justify-between">
-                <span>Active Bookings</span>
-                <span className="bg-brand/10 text-brand text-[10px] px-2 py-0.5 rounded-none font-black">{bookings.length}</span>
-              </h4>
-              <div className="flex flex-col gap-3">
-                {bookings.map((booking) => (
-                  <div key={booking.id} className="bg-white/3 border border-slate-200 rounded-none p-3.5 text-left relative group">
-                    <button
-                      onClick={() => handleDeleteBooking(booking.id)}
-                      className="absolute top-2.5 right-2 text-slate-800/30 hover:text-rose-400 p-1 rounded-none hover:bg-rose-500/10 transition-all opacity-0 group-hover:opacity-100"
-                      title="Cancel Booking"
-                    >
-                      <Trash2 size={13} />
-                    </button>
-                    <div className="text-[9px] font-bold text-brand uppercase tracking-widest">{booking.service}</div>
-                    <div className="text-xs font-black text-slate-800 mt-1 leading-tight uppercase tracking-tight">{booking.name}</div>
-                    <div className="text-[10px] text-slate-800/50 mt-1 uppercase font-bold">{booking.date} · {booking.timeSlot}</div>
-                  </div>
-                ))}
-                {bookings.length === 0 && (
-                  <div className="text-[11px] text-slate-800/40 uppercase tracking-wide font-medium py-4 text-center">
-                    No active session yet.
-                  </div>
-                )}
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

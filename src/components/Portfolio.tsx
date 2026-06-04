@@ -5,7 +5,7 @@ import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState<string>('All');
 
-  const categories = ['All', 'E-commerce', 'Web Development', 'Performance Marketing', 'SEO', 'Automation'];
+  const categories = ['All', 'Religious Services', 'Agritech', 'Education', 'Automation', 'Productivity SaaS'];
 
   const filteredItems = activeTab === 'All'
     ? portfolioItems
@@ -23,7 +23,7 @@ export default function Portfolio() {
               Recent Case Studies
             </h2>
             <p className="text-sm text-slate-800/50 max-w-xl">
-              From local Hubballi enterprises to direct-to-consumer digital brands across India — see the tangible metrics we help unlock.
+              From spiritual platforms to AI-powered SaaS — see the digital products we've built across diverse industries.
             </p>
           </div>
 
@@ -48,9 +48,12 @@ export default function Portfolio() {
         {/* Portfolio Grids */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
-            <div
+            <a
               key={item.id}
-              className="group bg-dark2 border border-slate-200 rounded-none overflow-hidden hover:border-brand transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between"
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-dark2 border border-slate-200 rounded-none overflow-hidden hover:border-brand transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between no-underline"
             >
               <div>
                 {/* Simulated Thumbnail */}
@@ -80,7 +83,7 @@ export default function Portfolio() {
                   <ArrowUpRight size={16} />
                 </span>
               </div>
-            </div>
+            </a>
           ))}
 
           {filteredItems.length === 0 && (

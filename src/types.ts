@@ -21,6 +21,7 @@ export interface PortfolioItem {
   category: string;
   metric: string;
   emoji: string;
+  url?: string;
 }
 
 export interface Testimonial {

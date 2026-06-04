@@ -78,7 +78,7 @@ export default function About() {
                 <span className="text-[9px] text-slate-800/40 uppercase font-bold tracking-widest">Launched</span>
               </div>
               <div>
-                <strong className="block font-display text-2xl md:text-4xl font-black text-brand tracking-tighter">50+</strong>
+                <strong className="block font-display text-2xl md:text-4xl font-black text-brand tracking-tighter">10+</strong>
                 <span className="text-[9px] text-slate-800/40 uppercase font-bold tracking-widest">Active clients</span>
               </div>
               <div>
