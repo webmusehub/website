@@ -4,23 +4,23 @@
 @theme {
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Syne", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --color-brand: #FF3E00;         /* Bold typography high-impact neon orange-red */
-  --color-brand-dark: #D63400;
-  --color-brand-light: #FFF0EB;   /* Low-contrast light orange backdrop */
-  --color-accent: #FF3E00;
-  --color-dark: #000000;          /* Brutalist solid black */
-  --color-dark2: #0A0A0A;         /* Ultra-dark grey for cards */
+  --color-brand: #2D6BE4;         /* vivid royal blue */
+  --color-brand-dark: #1E4EAA;
+  --color-brand-light: #EBF1FC;   
+  --color-accent: #2D6BE4;
+  --color-dark: #F5F3EE;          /* Off-white page background */
+  --color-dark2: #FFFFFF;         /* White for cards */
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #000000;
+  background-color: #F5F3EE;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #F5F3EE;
+  color: #334155; /* Slate 700 for main text */
   overflow-x: hidden;
 }
 
@@ -31,11 +31,11 @@ body {
 
 /* Stark borders and container modifications designed for Bold Typography style */
 .stark-border {
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .stark-divider {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Heavy display header overrides */
@@ -57,8 +57,8 @@ body {
 
 /* Custom Circular CTA aesthetic matching the design template's .big-cta */
 .circular-cta {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--color-brand);
+  color: #ffffff;
   width: 130px;
   height: 130px;
   border-radius: 50%;
@@ -72,12 +72,12 @@ body {
   letter-spacing: 0.05em;
   line-height: 1.2;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid #ffffff;
+  border: 1px solid var(--color-brand);
   text-align: center;
 }
 
 .circular-cta:hover {
-  background-color: #000000;
+  background-color: var(--color-brand-dark);
   color: #ffffff;
   transform: scale(1.08) rotate(5deg);
 }

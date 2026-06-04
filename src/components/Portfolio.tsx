@@ -19,10 +19,10 @@ export default function Portfolio() {
             <div className="inline-block font-display text-[10px] font-black tracking-widest text-brand uppercase bg-brand/10 border border-brand/35 px-4 py-1.5 rounded-none mb-4">
               Our Work
             </div>
-            <h2 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none text-white mb-2">
+            <h2 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none text-slate-800 mb-2">
               Recent Case Studies
             </h2>
-            <p className="text-sm text-white/50 max-w-xl">
+            <p className="text-sm text-slate-800/50 max-w-xl">
               From local Hubballi enterprises to direct-to-consumer digital brands across India — see the tangible metrics we help unlock.
             </p>
           </div>
@@ -35,8 +35,8 @@ export default function Portfolio() {
                 onClick={() => setActiveTab(cat)}
                 className={`px-4 py-2 rounded-none text-[10px] font-black uppercase tracking-widest border transition-all duration-200 ${
                   activeTab === cat
-                    ? 'bg-white border-white text-black'
-                    : 'bg-transparent border-white/10 text-white/60 hover:border-white/30 hover:text-white'
+                    ? 'bg-white border-slate-800 text-black'
+                    : 'bg-transparent border-slate-200 text-slate-800/60 hover:border-slate-800/30 hover:text-slate-800'
                 }`}
               >
                 {cat}
@@ -50,7 +50,7 @@ export default function Portfolio() {
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="group bg-dark2 border border-white/10 rounded-none overflow-hidden hover:border-brand transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between"
+              className="group bg-dark2 border border-slate-200 rounded-none overflow-hidden hover:border-brand transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between"
             >
               <div>
                 {/* Simulated Thumbnail */}
@@ -62,21 +62,21 @@ export default function Portfolio() {
                   <div className="text-[9px] font-bold tracking-widest text-brand uppercase mb-2">
                     {item.category}
                   </div>
-                  <h3 className="font-display font-black text-lg uppercase tracking-tight text-white mb-2 group-hover:text-brand transition-colors">
+                  <h3 className="font-display font-black text-lg uppercase tracking-tight text-slate-800 mb-2 group-hover:text-brand transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-white/50 leading-relaxed">
+                  <p className="text-xs text-slate-800/50 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
               </div>
 
-              <div className="px-6 pb-6 pt-4 border-t border-white/10 bg-white/1 mt-auto flex items-center justify-between">
+              <div className="px-6 pb-6 pt-4 border-t border-slate-200 bg-white/1 mt-auto flex items-center justify-between">
                 <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-emerald-400 font-sans">
                   <CheckCircle2 size={13} className="shrink-0" />
                   <span>{item.metric}</span>
                 </div>
-                <span className="text-white/30 group-hover:text-brand transition-colors duration-200">
+                <span className="text-slate-800/30 group-hover:text-brand transition-colors duration-200">
                   <ArrowUpRight size={16} />
                 </span>
               </div>
@@ -84,7 +84,7 @@ export default function Portfolio() {
           ))}
 
           {filteredItems.length === 0 && (
-            <div className="col-span-full py-12 text-center text-white/40 text-xs uppercase tracking-widest font-black">
+            <div className="col-span-full py-12 text-center text-slate-800/40 text-xs uppercase tracking-widest font-black">
               No matching case studies found in {activeTab}. Check back soon!
             </div>
           )}

@@ -9,32 +9,32 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 px-5 md:px-12 bg-dark2 border-y border-white/10">
+    <section id="about" className="py-24 px-5 md:px-12 bg-dark2 border-y border-slate-200">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Block - Mission and Vision Cards */}
           <div className="lg:col-span-6 flex flex-col gap-6 order-2 lg:order-1">
-            <div className="bg-dark border border-white/10 rounded-none p-6 md:p-8 hover:border-brand transition-all duration-300">
+            <div className="bg-dark border border-slate-200 rounded-none p-6 md:p-8 hover:border-brand transition-all duration-300">
               <span className="text-[10px] font-black text-brand uppercase tracking-widest block mb-2 leading-none">
                 Our Mission
               </span>
-              <h3 className="font-display font-black text-lg uppercase tracking-tight text-white mb-3">
+              <h3 className="font-display font-black text-lg uppercase tracking-tight text-slate-800 mb-3">
                 Empower Indian SMBs to Dominate the Digital Economy
               </h3>
-              <p className="text-sm text-white/50 leading-relaxed">
+              <p className="text-sm text-slate-800/50 leading-relaxed">
                 We combine visual storytelling, custom programming, and analytics to elevate businesses from basic setups to enterprise-level performers — creating customer acquisitions on demand.
               </p>
             </div>
 
-            <div className="bg-dark border border-white/10 rounded-none p-6 md:p-8 hover:border-brand transition-all duration-300">
+            <div className="bg-dark border border-slate-200 rounded-none p-6 md:p-8 hover:border-brand transition-all duration-300">
               <span className="text-[10px] font-black text-brand uppercase tracking-widest block mb-2 leading-none">
                 Our Vision
               </span>
-              <h3 className="font-display font-black text-lg uppercase tracking-tight text-white mb-3">
+              <h3 className="font-display font-black text-lg uppercase tracking-tight text-slate-800 mb-3">
                 The Preferred Growth Accelerator in Karnataka
               </h3>
-              <p className="text-sm text-white/50 leading-relaxed">
+              <p className="text-sm text-slate-800/50 leading-relaxed">
                 To build high-performance infrastructure that powers regional business scale, proving that top-tier digital transformation can be engineered affordably and executed locally.
               </p>
             </div>
@@ -42,9 +42,9 @@ export default function About() {
             {/* Core Values Pills Grid */}
             <div className="grid grid-cols-2 gap-3">
               {values.map((v) => (
-                <div key={v.label} className="bg-dark border border-white/10 rounded-none p-4 flex items-center gap-3">
+                <div key={v.label} className="bg-dark border border-slate-200 rounded-none p-4 flex items-center gap-3">
                   <span className={`w-2 h-2 rounded-none ${v.color} shrink-0`} />
-                  <span className="text-xs font-bold uppercase tracking-wider text-white">{v.label}</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-800">{v.label}</span>
                 </div>
               ))}
             </div>
@@ -55,11 +55,11 @@ export default function About() {
             <div className="inline-block font-display text-[10px] font-black tracking-widest text-brand uppercase bg-brand/10 border border-brand/35 px-4 py-1.5 rounded-none mb-4">
               About WebMuseHub
             </div>
-            <h2 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none text-white mb-6">
+            <h2 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none text-slate-800 mb-6">
               Driving Growth with Technology, Strategy & Creative Excellence
             </h2>
             
-            <div className="text-sm text-white/60 leading-relaxed flex flex-col gap-4">
+            <div className="text-sm text-slate-800/60 leading-relaxed flex flex-col gap-4">
               <p>
                 Founded in 2025, WebMuseHub was built around a singular idea: regional Indian enterprises deserve access to first-class software products and smart advertisement pipelines without bloated consultant overheads.
               </p>
@@ -72,18 +72,18 @@ export default function About() {
             </div>
 
             {/* Metrics Footer */}
-            <div className="grid grid-cols-3 gap-6 border-t border-white/15 pt-8 mt-8 w-full">
+            <div className="grid grid-cols-3 gap-6 border-t border-slate-200 pt-8 mt-8 w-full">
               <div>
                 <strong className="block font-display text-2xl md:text-4xl font-black text-brand tracking-tighter">2025</strong>
-                <span className="text-[9px] text-white/40 uppercase font-bold tracking-widest">Launched</span>
+                <span className="text-[9px] text-slate-800/40 uppercase font-bold tracking-widest">Launched</span>
               </div>
               <div>
                 <strong className="block font-display text-2xl md:text-4xl font-black text-brand tracking-tighter">50+</strong>
-                <span className="text-[9px] text-white/40 uppercase font-bold tracking-widest">Active clients</span>
+                <span className="text-[9px] text-slate-800/40 uppercase font-bold tracking-widest">Active clients</span>
               </div>
               <div>
                 <strong className="block font-display text-2xl md:text-4xl font-black text-brand tracking-tighter">7+</strong>
-                <span className="text-[9px] text-white/40 uppercase font-bold tracking-widest">Sectors served</span>
+                <span className="text-[9px] text-slate-800/40 uppercase font-bold tracking-widest">Sectors served</span>
               </div>
             </div>
           </div>

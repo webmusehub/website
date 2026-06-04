@@ -9,10 +9,10 @@ export default function Testimonials() {
           <div className="inline-block font-display text-[10px] font-black tracking-widest text-brand uppercase bg-brand/10 border border-brand/35 px-4 py-1.5 rounded-none mb-4">
             Testimonials
           </div>
-          <h2 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none text-white mb-4">
+          <h2 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none text-slate-800 mb-4">
             Hear From Our Clients
           </h2>
-          <p className="text-sm md:text-base text-white/50 leading-relaxed">
+          <p className="text-sm md:text-base text-slate-800/50 leading-relaxed">
             Real outcomes from real business leaders who scaled with our web optimization and performance marketing systems.
           </p>
         </div>
@@ -21,9 +21,9 @@ export default function Testimonials() {
           {testimonials.map((testi, i) => (
             <div
               key={i}
-              className="bg-dark2 border border-white/10 rounded-none p-8 relative flex flex-col justify-between hover:border-brand transition-all duration-300"
+              className="bg-dark2 border border-slate-200 rounded-none p-8 relative flex flex-col justify-between hover:border-brand transition-all duration-300"
             >
-              <div className="absolute top-6 right-8 text-white/5 pointer-events-none">
+              <div className="absolute top-6 right-8 text-slate-800/5 pointer-events-none">
                 <Quote size={40} />
               </div>
 
@@ -35,18 +35,18 @@ export default function Testimonials() {
                   ))}
                 </div>
 
-                <blockquote className="text-sm text-white/70 leading-relaxed mb-6 font-medium">
+                <blockquote className="text-sm text-slate-800/70 leading-relaxed mb-6 font-medium">
                   "{testi.text}"
                 </blockquote>
               </div>
 
-              <div className="border-t border-white/10 pt-5 flex items-center gap-3">
-                <div className={`w-9 h-9 rounded-none flex items-center justify-center text-white text-xs font-black shrink-0 ${testi.background || 'bg-brand'}`}>
+              <div className="border-t border-slate-200 pt-5 flex items-center gap-3">
+                <div className={`w-9 h-9 rounded-none flex items-center justify-center text-slate-800 text-xs font-black shrink-0 ${testi.background || 'bg-brand'}`}>
                   {testi.initials}
                 </div>
                 <div>
-                  <div className="text-xs font-black uppercase tracking-wider text-white leading-tight">{testi.author}</div>
-                  <div className="text-[10px] uppercase font-bold text-white/40 mt-1 leading-none">{testi.role}</div>
+                  <div className="text-xs font-black uppercase tracking-wider text-slate-800 leading-tight">{testi.author}</div>
+                  <div className="text-[10px] uppercase font-bold text-slate-800/40 mt-1 leading-none">{testi.role}</div>
                 </div>
               </div>
             </div>
